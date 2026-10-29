@@ -796,38 +796,7 @@
                     </div>
                 </div>
 
-                <!-- Contact Message Form -->
-                <div class="lg:col-span-7">
-                    <form onsubmit="handleFormSubmit(event)" class="executive-card rounded-3xl p-6 sm:p-8 space-y-4">
-                        <h3 class="text-lg font-bold text-navy-950">Send a Direct Message</h3>
 
-                        <div class="grid sm:grid-cols-2 gap-4">
-                            <div class="space-y-1.5">
-                                <label class="text-xs font-bold text-navy-800">Your Name</label>
-                                <input type="text" required placeholder="Name" class="w-full bg-alabaster-100 border border-alabaster-300 rounded-xl px-4 py-3 text-xs text-navy-950 placeholder-navy-400 focus:outline-none focus:border-emerald-800 transition-colors">
-                            </div>
-                            <div class="space-y-1.5">
-                                <label class="text-xs font-bold text-navy-800">Your Email</label>
-                                <input type="email" required placeholder="Email Address" class="w-full bg-alabaster-100 border border-alabaster-300 rounded-xl px-4 py-3 text-xs text-navy-950 placeholder-navy-400 focus:outline-none focus:border-emerald-800 transition-colors">
-                            </div>
-                        </div>
-
-                        <div class="space-y-1.5">
-                            <label class="text-xs font-bold text-navy-800">Subject</label>
-                            <input type="text" required placeholder="Sponsorship / Internship Opportunity" class="w-full bg-alabaster-100 border border-alabaster-300 rounded-xl px-4 py-3 text-xs text-navy-950 placeholder-navy-400 focus:outline-none focus:border-emerald-800 transition-colors">
-                        </div>
-
-                        <div class="space-y-1.5">
-                            <label class="text-xs font-bold text-navy-800">Message</label>
-                            <textarea rows="4" required placeholder="Write your message here..." class="w-full bg-alabaster-100 border border-alabaster-300 rounded-xl px-4 py-3 text-xs text-navy-950 placeholder-navy-400 focus:outline-none focus:border-emerald-800 transition-colors"></textarea>
-                        </div>
-
-                        <button type="submit" class="w-full py-3.5 rounded-xl bg-navy-900 hover:bg-emerald-800 text-white font-bold text-xs shadow-md transition-all flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-paper-plane"></i>
-                            <span>Send Message</span>
-                        </button>
-                    </form>
-                </div>
 
             </div>
         </section>
@@ -885,12 +854,6 @@
                 toast.classList.remove('translate-y-0', 'opacity-100');
                 toast.classList.add('translate-y-20', 'opacity-0');
             }, 3000);
-        }
-
-        function handleFormSubmit(e) {
-            e.preventDefault();
-            showToast('Message sent successfully!');
-            e.target.reset();
         }
 
         function filterLeadership(category) {
