@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aryanna Feona B. Dela Cruz | Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        obsidian: {
+                            950: '#070a0f',
+                            900: '#0b0f17',
+                            800: '#111827',
+                            700: '#1f293d',
+                        },
+                        amber: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        },
+                        emerald: {
+                            400: '#34d399',
+                            500: '#10b981',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.35; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.04); }
+        }
+        .animate-glow {
+            animation: pulseGlow 6s ease-in-out infinite;
+        }
+        .glass-card {
+            background: rgba(17, 24, 39, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            border-color: rgba(245, 158, 11, 0.35);
+            box-shadow: 0 12px 35px -10px rgba(245, 158, 11, 0.18);
+            transform: translateY(-2px);
+        }
+        .glass-header {
+            background: rgba(11, 15, 23, 0.85);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+        }
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white !important; color: black !important; }
+            .glass-card { background: white !important; border: 1px solid #e2e8f0 !important; color: black !important; box-shadow: none !important; }
+            .text-slate-400, .text-slate-300 { color: #334155 !important; }
+            .text-white { color: #0f172a !important; }
+        }
+    </style>
+</head>
+<body class="bg-obsidian-950 text-slate-100 font-sans antialiased selection:bg-amber-500 selection:text-obsidian-950">
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-emerald-950/90 text-emerald-200 px-5 py-3.5 rounded-2xl shadow-2xl flex items-center gap-3 border border-emerald-500/30 backdrop-blur-md">
+        <i class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
+        <span id="toast-message" class="text-sm font-medium">Copied to clipboard!</span>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-40 glass-header border-b border-slate-800/60 no-print">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#home" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 to-amber-300 flex items-center justify-center text-obsidian-950 font-bold font-serif text-lg shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform">
+                    AD
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-bold tracking-tight text-white group-hover:text-amber-400 transition-colors">Aryanna Dela Cruz</span>
+                    <span class="text-xs text-amber-500/90 font-medium tracking-wide uppercase">BS Accountancy • DLSU</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-1 bg-obsidian-900/80 p-1.5 rounded-2xl border border-slate-800/80">
+                <a href="#about" class="px-4 py-2 text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-xl transition-all">About</a>
+                <a href="#education" class="px-4 py-2 text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-xl transition-all">Education</a>
+                <a href="#experience" class="px-4 py-2 text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-xl transition-all">Experience</a>
+                <a href="#leadership" class="px-4 py-2 text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-xl transition-all">Leadership</a>
+                <a href="#skills" class="px-4 py-2 text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-xl transition-all">Skills</a>
+                <a href="#contact" class="px-4 py-2 text-xs font-semibold text-amber-400 hover:text-amber-300 hover:bg-amber-500/10 rounded-xl transition-all">Contact</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="hidden sm:flex items-center gap-3">
+                <button onclick="window.print()" class="px-4 py-2 text-xs font-semibold text-slate-300 hover:text-white bg-slate-900 hover:bg-slate-800 border border-slate-700/60 rounded-xl transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-print text-amber-400"></i>
+                    <span>Print / PDF</span>
+                </button>
+                <a href="#contact" class="px-4 py-2 text-xs font-bold text-obsidian-950 bg-amber-400 hover:bg-amber-300 rounded-xl shadow-lg shadow-amber-500/20 transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    <span>Let's Talk</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden p-2 text-slate-400 hover:text-white focus:outline-none">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-obsidian-900/95 border-b border-slate-800 px-6 py-4 space-y-3">
+            <a href="#about" onclick="toggleMobileMenu()" class="block text-sm font-medium text-slate-300 hover:text-amber-400 py-1">About</a>
+            <a href="#education" onclick="toggleMobileMenu()" class="block text-sm font-medium text-slate-300 hover:text-amber-400 py-1">Education</a>
+            <a href="#experience" onclick="toggleMobileMenu()" class="block text-sm font-medium text-slate-300 hover:text-amber-400 py-1">Experience</a>
+            <a href="#leadership" onclick="toggleMobileMenu()" class="block text-sm font-medium text-slate-300 hover:text-amber-400 py-1">Leadership</a>
+            <a href="#skills" onclick="toggleMobileMenu()" class="block text-sm font-medium text-slate-300 hover:text-amber-400 py-1">Skills</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block text-sm font-medium text-amber-400 hover:text-amber-300 py-1">Contact</a>
+            <div class="pt-3 border-t border-slate-800 flex flex-col gap-2">
+                <button onclick="window.print()" class="w-full py-2.5 text-xs font-semibold text-slate-200 bg-slate-800 rounded-xl flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-print text-amber-400"></i> Print / Save as PDF
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="pt-28 pb-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
+
+        <!-- HERO SECTION -->
+        <section id="home" class="relative pt-6 sm:pt-12">
+            <!-- Background Glow FX -->
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none animate-glow"></div>
+            <div class="absolute top-20 right-10 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="grid lg:grid-cols-12 gap-8 items-center">
+                <!-- Left Details -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold tracking-wide">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 -ml-4"></span>
+                        <span>Open to Internship & Leadership Roles</span>
+                    </div>
+
+                    <div class="space-y-3">
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-none">
+                            Aryanna Feona <br>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500 font-serif italic">B. Dela Cruz</span>
+                        </h1>
+                        <p class="text-lg sm:text-xl text-slate-300 font-medium">
+                            Aspiring Lasallian Business Leader, Finance & Accountancy Specialist
+                        </p>
+                    </div>
+
+                    <p class="text-slate-400 text-sm sm:text-base leading-relaxed max-w-2xl">
+                        To develop as a Lasallian Business Leader by contributing my skills, initiative, and enthusiasm for learning, while gaining meaningful experience and growth in a dynamic, real-world work environment.
+                    </p>
+
+                    <!-- Contact Bar Quick Badges -->
+                    <div class="flex flex-wrap gap-3 pt-2">
+                        <a href="https://www.linkedin.com/in/aryanna-feona-dela-cruz-52656537a/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-amber-500/10 border border-amber-500/30 text-xs text-amber-300 hover:text-amber-200 hover:bg-amber-500/20 transition-all group">
+                            <i class="fa-brands fa-linkedin text-amber-400 group-hover:scale-110 transition-transform text-sm"></i>
+                            <span class="font-semibold">LinkedIn Profile</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-amber-400"></i>
+                        </a>
+                        <button onclick="copyToClipboard('yanna_delacruz@dlsu.edu.ph')" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-obsidian-900 border border-slate-800 text-xs text-slate-300 hover:text-white hover:border-amber-500/50 transition-all group">
+                            <i class="fa-solid fa-envelope text-amber-400 group-hover:scale-110 transition-transform"></i>
+                            <span>yanna_delacruz@dlsu.edu.ph</span>
+                            <i class="fa-regular fa-copy text-slate-500 ml-1"></i>
+                        </button>
+                        <button onclick="copyToClipboard('+639150546892')" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-obsidian-900 border border-slate-800 text-xs text-slate-300 hover:text-white hover:border-amber-500/50 transition-all group">
+                            <i class="fa-solid fa-phone text-amber-400 group-hover:scale-110 transition-transform"></i>
+                            <span>+63 915 054 6892</span>
+                            <i class="fa-regular fa-copy text-slate-500 ml-1"></i>
+                        </button>
+                        <span class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-obsidian-900 border border-slate-800 text-xs text-slate-400">
+                            <i class="fa-solid fa-location-dot text-amber-400"></i>
+                            <span>Pulilan, Bulacan</span>
+                        </span>
+                    </div>
+
+                    <!-- Call To Action Buttons -->
+                    <div class="flex flex-wrap items-center gap-4 pt-4">
+                        <a href="https://www.linkedin.com/in/aryanna-feona-dela-cruz-52656537a/" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-amber-500 to-amber-400 text-obsidian-950 font-bold text-sm shadow-xl shadow-amber-500/20 hover:shadow-amber-500/30 hover:scale-[1.02] transition-all flex items-center gap-2">
+                            <i class="fa-brands fa-linkedin text-base"></i>
+                            <span>Connect on LinkedIn</span>
+                        </a>
+                        <a href="#contact" class="px-6 py-3.5 rounded-2xl bg-slate-900 hover:bg-slate-800 border border-slate-700/80 text-white font-semibold text-sm transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-paper-plane text-amber-400"></i>
+                            <span>Send Message</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Hero Card / Highlights -->
+                <div class="lg:col-span-5">
+                    <div class="glass-card rounded-3xl p-6 sm:p-8 relative overflow-hidden">
+                        <div class="absolute -top-12 -right-12 w-36 h-36 bg-amber-500/10 rounded-full blur-2xl"></div>
+                        
+                        <!-- Top Header in Card -->
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="relative">
+                                <div class="w-20 h-20 rounded-2xl bg-slate-800 border-2 border-amber-400/50 p-1 flex items-center justify-center overflow-hidden shadow-xl">
+                                    <div class="w-full h-full rounded-xl bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center text-amber-400 font-serif font-bold text-2xl">
+                                        AF
+                                    </div>
+                                </div>
+                                <div class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-emerald-500 border-2 border-obsidian-950 flex items-center justify-center" title="Active Student & Leader">
+                                    <i class="fa-solid fa-check text-[10px] text-obsidian-950 font-bold"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-bold text-lg">Aryanna Dela Cruz</h3>
+                                <p class="text-xs text-slate-400">De La Salle University - Manila</p>
+                                <div class="mt-1 flex items-center gap-2 text-amber-400 text-xs font-semibold">
+                                    <i class="fa-solid fa-award"></i>
+                                    <span>Consistent First Honors Dean's Lister</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Highlights Grid -->
+                        <div class="grid grid-cols-2 gap-3 pt-2">
+                            <div class="p-3.5 rounded-2xl bg-obsidian-900/80 border border-slate-800/80">
+                                <div class="text-amber-400 text-xl font-bold font-serif">3.608</div>
+                                <div class="text-[11px] text-slate-400 font-medium">DLSU CGPA (Out of 4.0)</div>
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-obsidian-900/80 border border-slate-800/80">
+                                <div class="text-amber-400 text-xl font-bold font-serif">5 Terms</div>
+                                <div class="text-[11px] text-slate-400 font-medium">First Honors Dean's Lister</div>
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-obsidian-900/80 border border-slate-800/80">
+                                <div class="text-amber-400 text-xl font-bold font-serif">5+ Roles</div>
+                                <div class="text-[11px] text-slate-400 font-medium">Leadership & Exec Roles</div>
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-obsidian-900/80 border border-slate-800/80">
+                                <div class="text-emerald-400 text-xl font-bold font-serif">50+ Leads</div>
+                                <div class="text-[11px] text-slate-400 font-medium">BizDev Conversion Achieved</div>
+                            </div>
+                        </div>
+
+                        <!-- Quote / Core Motto -->
+                        <div class="mt-6 pt-5 border-t border-slate-800/80 flex items-start gap-3">
+                            <i class="fa-solid fa-quote-left text-amber-400/60 text-lg mt-0.5"></i>
+                            <p class="text-xs text-slate-300 italic leading-relaxed">
+                                Disciplined, flexible, and adaptable. Driven by leadership, financial stewardship, and societal impact.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="space-y-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-800/80 pb-4">
+                <div>
+                    <span class="text-amber-400 text-xs font-bold uppercase tracking-widest">Background & Persona</span>
+                    <h2 class="text-3xl font-extrabold text-white">About Aryanna</h2>
+                </div>
+                <p class="text-slate-400 text-xs md:text-right max-w-sm">
+                    A holistic overview of academic excellence, core strengths, and personal commitments.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="glass-card rounded-3xl p-6 space-y-3">
+                    <div class="w-10 h-10 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 text-lg">
+                        <i class="fa-solid fa-calculator"></i>
+                    </div>
+                    <h3 class="text-white font-bold text-base">Accountancy & Rigor</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Currently pursuing Bachelor of Science in Accountancy at DLSU Manila. Maintaining a CGPA of 3.608/4.000 while active across multiple student organizations.
+                    </p>
+                </div>
+
+                <div class="glass-card rounded-3xl p-6 space-y-3">
+                    <div class="w-10 h-10 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 text-lg">
+                        <i class="fa-solid fa-users-gear"></i>
+                    </div>
+                    <h3 class="text-white font-bold text-base">Executive Leadership</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        President of Lasallian Youth Corp - Manila and Corporate Relations Leader for JPIA & EXCEED Central Committee, driving partnerships and team synergy.
+                    </p>
+                </div>
+
+                <div class="glass-card rounded-3xl p-6 space-y-3">
+                    <div class="w-10 h-10 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 text-lg">
+                        <i class="fa-solid fa-handshake"></i>
+                    </div>
+                    <h3 class="text-white font-bold text-base">Partnership & Growth</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Proven experience in corporate outreach, lead generation, sponsorship packages, event scriptwriting, and community mobilization.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION SECTION -->
+        <section id="education" class="space-y-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-800/80 pb-4">
+                <div>
+                    <span class="text-amber-400 text-xs font-bold uppercase tracking-widest">Academic Excellence</span>
+                    <h2 class="text-3xl font-extrabold text-white">Education History</h2>
+                </div>
+                <div class="inline-flex items-center gap-2 text-xs text-amber-400 bg-amber-500/10 px-3 py-1.5 rounded-full border border-amber-500/20">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span>Consistent Honor Scholar</span>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <!-- DLSU College -->
+                <div class="glass-card rounded-3xl p-6 sm:p-8 relative">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800/80 pb-4 mb-4">
+                        <div>
+                            <span class="text-xs font-semibold text-amber-400 tracking-wider uppercase">2024 - Present</span>
+                            <h3 class="text-xl font-bold text-white mt-0.5">De La Salle University - Manila</h3>
+                            <p class="text-sm font-medium text-slate-300">Bachelor of Science in Accountancy</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="px-3 py-1 rounded-xl bg-amber-400/10 border border-amber-400/30 text-amber-300 font-bold text-xs">
+                                CGPA: 3.608 / 4.000
+                            </span>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="text-xs font-semibold text-slate-300 flex items-center gap-2">
+                            <i class="fa-solid fa-star text-amber-400"></i>
+                            <span>Consistent First Honors Dean's Lister Honors:</span>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-1">
+                            <span class="px-2.5 py-1 rounded-lg bg-obsidian-900 text-slate-300 text-[11px] border border-slate-800">1st Term, AY 2024-2025</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-obsidian-900 text-slate-300 text-[11px] border border-slate-800">2nd Term, AY 2024-2025</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-obsidian-900 text-slate-300 text-[11px] border border-slate-800">3rd Term, AY 2024-2025</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-obsidian-900 text-slate-300 text-[11px] border border-slate-800">1st Term, AY 2025-2026</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-obsidian-900 text-slate-300 text-[11px] border border-slate-800">3rd Term, AY 2025-2026</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DLSU SHS -->
+                <div class="glass-card rounded-3xl p-6 sm:p-8">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800/80 pb-4 mb-4">
+                        <div>
+                            <span class="text-xs font-semibold text-slate-400 tracking-wider uppercase">2022 - 2024</span>
+                            <h3 class="text-lg font-bold text-white mt-0.5">De La Salle University - Integrated Senior High School</h3>
+                            <p class="text-sm text-slate-300">Accountancy, Business, and Management (ABM) Strand</p>
+                        </div>
+                        <span class="text-xs font-semibold text-slate-400">Senior High School Diploma</span>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="text-xs font-semibold text-slate-300 flex items-center gap-2">
+                            <i class="fa-solid fa-trophy text-amber-400"></i>
+                            <span>Awards & Recognition (2024):</span>
+                        </div>
+                        <ul class="grid md:grid-cols-3 gap-2 pt-1 text-xs text-slate-300">
+                            <li class="bg-obsidian-900 p-2.5 rounded-xl border border-slate-800 flex items-center gap-2">
+                                <i class="fa-solid fa-medal text-amber-400"></i>
+                                <span>Silver Medallion General Excellence</span>
+                            </li>
+                            <li class="bg-obsidian-900 p-2.5 rounded-xl border border-slate-800 flex items-center gap-2">
+                                <i class="fa-solid fa-ribbon text-amber-400"></i>
+                                <span>Gold Outstanding Org Member</span>
+                            </li>
+                            <li class="bg-obsidian-900 p-2.5 rounded-xl border border-slate-800 flex items-center gap-2">
+                                <i class="fa-solid fa-award text-amber-400"></i>
+                                <span>Br. Ceci Hojilla FSC Award (Highest Extra/Co-Curricular)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Miriam College High School & Middle School Grid -->
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="glass-card rounded-3xl p-6">
+                        <span class="text-xs font-semibold text-slate-400 tracking-wider uppercase">2020 - 2022</span>
+                        <h3 class="text-base font-bold text-white mt-1">Miriam College High School</h3>
+                        <p class="text-xs text-slate-400 mb-3">Junior High School Diploma (2022)</p>
+                        <div class="inline-flex items-center gap-2 text-xs text-amber-300 bg-amber-500/10 px-3 py-1 rounded-lg border border-amber-500/20">
+                            <i class="fa-solid fa-certificate"></i>
+                            <span>Academic Award (2022)</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-3xl p-6">
+                        <span class="text-xs font-semibold text-slate-400 tracking-wider uppercase">2018 - 2020</span>
+                        <h3 class="text-base font-bold text-white mt-1">Miriam College Middle School</h3>
+                        <p class="text-xs text-slate-400 mb-3">Middle School Diploma (2020)</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="inline-flex items-center gap-1.5 text-xs text-amber-300 bg-amber-500/10 px-2.5 py-1 rounded-lg border border-amber-500/20">
+                                <i class="fa-solid fa-medal"></i> Bronze Medallion Outstanding Academic
+                            </span>
+                            <span class="inline-flex items-center gap-1.5 text-xs text-amber-300 bg-amber-500/10 px-2.5 py-1 rounded-lg border border-amber-500/20">
+                                <i class="fa-solid fa-futbol"></i> Outstanding Football Club Member
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WORK EXPERIENCE SECTION -->
+        <section id="experience" class="space-y-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-800/80 pb-4">
+                <div>
+                    <span class="text-amber-400 text-xs font-bold uppercase tracking-widest">Professional Trajectory</span>
+                    <h2 class="text-3xl font-extrabold text-white">Work Experience</h2>
+                </div>
+                <p class="text-slate-400 text-xs md:text-right">
+                    Hands-on internship background in business strategy & communication.
+                </p>
+            </div>
+
+            <div class="glass-card rounded-3xl p-6 sm:p-8 relative">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800/80 pb-6 mb-6">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-xl font-bold shrink-0">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold text-amber-400 tracking-wider uppercase">October 2025 - January 2026</span>
+                            <h3 class="text-xl font-bold text-white mt-0.5">Business Development Intern</h3>
+                            <p class="text-sm font-medium text-slate-300">Islandmate Enterprise</p>
+                        </div>
+                    </div>
+                    <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-semibold self-start md:self-auto">
+                        <i class="fa-solid fa-check-circle mr-1"></i> Completed Internship
+                    </span>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-4 text-xs text-slate-300">
+                    <div class="space-y-2.5 bg-obsidian-900/60 p-4 rounded-2xl border border-slate-800/80">
+                        <div class="font-semibold text-amber-400 flex items-center gap-2 text-sm">
+                            <i class="fa-solid fa-bullseye"></i> Lead Generation & Outreach
+                        </div>
+                        <ul class="space-y-2 text-slate-300">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-angle-right text-amber-500 mt-0.5"></i>
+                                <span>Conducted comprehensive market and competitor research to identify target leads and optimize overall business strategy.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-angle-right text-amber-500 mt-0.5"></i>
+                                <span>Generated and systematically managed <strong>50+ email leads</strong>, executing cold outreach via Facebook messages and active engagement on Facebook Marketplace.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="space-y-2.5 bg-obsidian-900/60 p-4 rounded-2xl border border-slate-800/80">
+                        <div class="font-semibold text-amber-400 flex items-center gap-2 text-sm">
+                            <i class="fa-solid fa-calendar-check"></i> Client Engagement & Analytics
+                        </div>
+                        <ul class="space-y-2 text-slate-300">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-angle-right text-amber-500 mt-0.5"></i>
+                                <span>Planned and implemented structured 6-day content posting schedules (pegs, captions, group distributions).</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-angle-right text-amber-500 mt-0.5"></i>
+                                <span>Handled client inquiries, drafted formal quotations, and delivered weekly & monthly performance tracking reports to management.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LEADERSHIP & CO-CURRICULAR SECTION -->
+        <section id="leadership" class="space-y-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-800/80 pb-4">
+                <div>
+                    <span class="text-amber-400 text-xs font-bold uppercase tracking-widest">Organizational Leadership</span>
+                    <h2 class="text-3xl font-extrabold text-white">Co-Curricular & Roles</h2>
+                </div>
+                <!-- Filter Tabs -->
+                <div class="flex items-center gap-2 bg-obsidian-900 p-1 rounded-xl border border-slate-800 text-xs">
+                    <button onclick="filterLeadership('all')" id="btn-lead-all" class="px-3 py-1.5 rounded-lg bg-amber-500 text-obsidian-950 font-bold transition-all">All Roles</button>
+                    <button onclick="filterLeadership('exec')" id="btn-lead-exec" class="px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition-all">Executive</button>
+                    <button onclick="filterLeadership('corp')" id="btn-lead-corp" class="px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition-all">Corporate Relations</button>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6" id="leadership-grid">
+
+                <!-- LYC President -->
+                <div class="glass-card rounded-3xl p-6 space-y-3 lead-card exec">
+                    <div class="flex justify-between items-start">
+                        <span class="text-xs font-semibold text-amber-400 uppercase tracking-wide">Sept 2026 - Aug 2027</span>
+                        <span class="px-2.5 py-0.5 rounded-full bg-amber-500/10 text-amber-300 text-[10px] font-bold border border-amber-500/20">Executive Lead</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">President</h3>
+                    <p class="text-xs font-medium text-slate-300">Lasallian Youth Corp - Manila</p>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Led the organization in planning and executing humanitarian, environmental, and faith-based initiatives. Overseeing officers and committees to ensure effective coordination, stakeholder alignment, and organizational performance.
+                    </p>
+                </div>
+
+                <!-- JPIA Associate -->
+                <div class="glass-card rounded-3xl p-6 space-y-3 lead-card corp">
+                    <div class="flex justify-between items-start">
+                        <span class="text-xs font-semibold text-slate-400 uppercase tracking-wide">Sept 2025 - Aug 2026</span>
+                        <span class="px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-300 text-[10px] font-bold">JPIA DLSU</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Associate for Corporate Relations</h3>
+                    <p class="text-xs font-medium text-slate-300">Junior Philippine Institute of Accountants - DLSU</p>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Managed corporate communications with prospective and existing sponsors for JPIA's year-long initiatives. Coordinated deliverables with company representatives and aligned sponsor engagements with project heads.
+                    </p>
+                </div>
+
+                <!-- EXCEED 2026 Team Leader -->
+                <div class="glass-card rounded-3xl p-6 space-y-3 lead-card corp exec">
+                    <div class="flex justify-between items-start">
+                        <span class="text-xs font-semibold text-slate-400 uppercase tracking-wide">Nov 2025 - Apr 2026</span>
+                        <span class="px-2.5 py-0.5 rounded-full bg-amber-500/10 text-amber-300 text-[10px] font-bold border border-amber-500/20">Team Leader</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Team Leader for Corporate Relations</h3>
+                    <p class="text-xs font-medium text-slate-300">EXCEED 2026 Central Committee</p>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Led the Corporate Relations team in securing corporate partnerships for EXCEED 2026 convention. Managed external communications, company outreach, booth coordination, and sponsorship execution throughout the convention.
+                    </p>
+                </div>
+
+                <!-- JPIA President's Elite -->
+                <div class="glass-card rounded-3xl p-6 space-y-3 lead-card corp">
+                    <div class="flex justify-between items-start">
+                        <span class="text-xs font-semibold text-slate-400 uppercase tracking-wide">Nov 2024 - Aug 2025</span>
+                        <span class="px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-300 text-[10px] font-bold">Officer Intern</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">President's Elite for Corporate Relations</h3>
+                    <p class="text-xs font-medium text-slate-300">Junior Philippine Institute of Accountants - DLSU</p>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Completed JPIA officer training program focusing on event organization, administrative affairs, drafting professional communications, and corporate relations management under senior officers.
+                    </p>
+                </div>
+
+                <!-- NSTP CWTS Project Head -->
+                <div class="glass-card rounded-3xl p-6 space-y-3 lead-card exec">
+                    <div class="flex justify-between items-start">
+                        <span class="text-xs font-semibold text-slate-400 uppercase tracking-wide">Jan 2025 - Aug 2025</span>
+                        <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 text-[10px] font-bold border border-emerald-500/20">Community Outreach</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Project Head</h3>
+                    <p class="text-xs font-medium text-slate-300">NSTP CWTS Class Initiative</p>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Led full project cycle from partner immersion to proposing livelihood solutions. Oversaw creation of an inventory management system and rebranding of household cleaning products, alongside Resource Mobilization Week fundraising.
+                    </p>
+                </div>
+
+                <!-- EXCEED 2025 Asst Team Leader -->
+                <div class="glass-card rounded-3xl p-6 space-y-3 lead-card corp">
+                    <div class="flex justify-between items-start">
+                        <span class="text-xs font-semibold text-slate-400 uppercase tracking-wide">Dec 2024 - Mar 2025</span>
+                        <span class="px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-300 text-[10px] font-bold">Asst. Team Leader</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Assistant Team Leader for Corporate Relations</h3>
+                    <p class="text-xs font-medium text-slate-300">EXCEED 2025 Central Committee</p>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Handled sponsorship relations for the Accounting Challenge and Accounting Convention. Presented sponsorship packages, set up company booths, and assisted firm representatives on event day.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SEMINARS ATTENDED & CONDUCTED -->
+        <section id="seminars" class="space-y-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-800/80 pb-4">
+                <div>
+                    <span class="text-amber-400 text-xs font-bold uppercase tracking-widest">Professional Development</span>
+                    <h2 class="text-3xl font-extrabold text-white">Seminars & Speaking</h2>
+                </div>
+                <p class="text-slate-400 text-xs">Knowledge enhancement & public engagement.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+
+                <!-- Seminar Conducted -->
+                <div class="glass-card rounded-3xl p-6 space-y-3 border-l-4 border-l-amber-400 md:col-span-1">
+                    <div class="flex items-center gap-2 text-amber-400 text-xs font-bold uppercase">
+                        <i class="fa-solid fa-microphone-lines"></i>
+                        <span>Seminar Conducted</span>
+                    </div>
+                    <span class="text-[11px] font-semibold text-slate-400 block">July 2025</span>
+                    <h3 class="text-base font-bold text-white">Project Head & Host — JPIA Open House</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Hosted and scripted a seminar for BS Accountancy students featuring plenary discussions with industry leaders. Moderated career insights, internship pathways, and firm opportunities.
+                    </p>
+                </div>
+
+                <!-- Seminar Attended 1 -->
+                <div class="glass-card rounded-3xl p-6 space-y-3 md:col-span-1">
+                    <div class="flex items-center gap-2 text-emerald-400 text-xs font-bold uppercase">
+                        <i class="fa-solid fa-chart-candlestick"></i>
+                        <span>Trading & Investments</span>
+                    </div>
+                    <span class="text-[11px] font-semibold text-slate-400 block">August 2026</span>
+                    <h3 class="text-base font-bold text-white">IGNITE 2026 DLSU Trading & Investment Expo</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Participated in Plenary Sessions with finance professionals. Learned stock/fixed income trading under volatile market conditions, risk management, inflation, and interest rate impacts.
+                    </p>
+                </div>
+
+                <!-- Seminar Attended 2 -->
+                <div class="glass-card rounded-3xl p-6 space-y-3 md:col-span-1">
+                    <div class="flex items-center gap-2 text-slate-400 text-xs font-bold uppercase">
+                        <i class="fa-solid fa-user-gear"></i>
+                        <span>Leadership Growth</span>
+                    </div>
+                    <span class="text-[11px] font-semibold text-slate-400 block">April 2024</span>
+                    <h3 class="text-base font-bold text-white">Leadership Seminar — DLSU SHS Student Council</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Participated as Class President in transition leadership practices, team collaboration, and problem-solving workshops across academic environments.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SKILLS & COMPETENCIES MATRIX -->
+        <section id="skills" class="space-y-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-800/80 pb-4">
+                <div>
+                    <span class="text-amber-400 text-xs font-bold uppercase tracking-widest">Capabilities</span>
+                    <h2 class="text-3xl font-extrabold text-white">Skills Matrix</h2>
+                </div>
+                <p class="text-slate-400 text-xs">Technical, organizational, and strategic skill sets.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <!-- Skill Block 1 -->
+                <div class="glass-card rounded-3xl p-6 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold text-base">
+                            <i class="fa-solid fa-calculator"></i>
+                        </div>
+                        <h3 class="text-sm font-bold text-white">Finance & Accounting</h3>
+                    </div>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li class="bg-obsidian-900/80 p-2.5 rounded-xl border border-slate-800 flex items-center justify-between">
+                            <span>Financial Stewardship</span>
+                            <i class="fa-solid fa-check text-amber-400 text-[10px]"></i>
+                        </li>
+                        <li class="bg-obsidian-900/80 p-2.5 rounded-xl border border-slate-800 flex items-center justify-between">
+                            <span>Inventory Management</span>
+                            <i class="fa-solid fa-check text-amber-400 text-[10px]"></i>
+                        </li>
+                        <li class="bg-obsidian-900/80 p-2.5 rounded-xl border border-slate-800 flex items-center justify-between">
+                            <span>Market Analysis & Risk</span>
+                            <i class="fa-solid fa-check text-amber-400 text-[10px]"></i>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Skill Block 2 -->
+                <div class="glass-card rounded-3xl p-6 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold text-base">
+                            <i class="fa-solid fa-handshake"></i>
+                        </div>
+                        <h3 class="text-sm font-bold text-white">Partnerships & CRM</h3>
+                    </div>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li class="bg-obsidian-900/80 p-2.5 rounded-xl border border-slate-800 flex items-center justify-between">
+                            <span>Sponsorship Packages</span>
+                            <i class="fa-solid fa-check text-amber-400 text-[10px]"></i>
+                        </li>
+                        <li class="bg-obsidian-900/80 p-2.5 rounded-xl border border-slate-800 flex items-center justify-between">
+                            <span>Lead Generation & Cold Outreach</span>
+                            <i class="fa-solid fa-check text-amber-400 text-[10px]"></i>
+                        </li>
+                        <li class="bg-obsidian-900/80 p-2.5 rounded-xl border border-slate-800 flex items-center justify-between">
+                            <span>Client Inquiries & Quotations</span>
+                            <i class="fa-solid fa-check text-amber-400 text-[10px]"></i>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Skill Block 3 -->
+                <div class="glass-card rounded-3xl p-6 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold text-base">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <h3 class="text-sm font-bold text-white">Leadership & Comms</h3>
+                    </div>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li class="bg-obsidian-900/80 p-2.5 rounded-xl border border-slate-800 flex items-center justify-between">
+                            <span>Strategic Event Planning</span>
+                            <i class="fa-solid fa-check text-amber-400 text-[10px]"></i>
+                        </li>
+                        <li class="bg-obsidian-900/80 p-2.5 rounded-xl border border-slate-800 flex items-center justify-between">
+                            <span>Public Speaking & Hosting</span>
+                            <i class="fa-solid fa-check text-amber-400 text-[10px]"></i>
+                        </li>
+                        <li class="bg-obsidian-900/80 p-2.5 rounded-xl border border-slate-800 flex items-center justify-between">
+                            <span>Fluent English & Filipino</span>
+                            <i class="fa-solid fa-check text-amber-400 text-[10px]"></i>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Skill Block 4 -->
+                <div class="glass-card rounded-3xl p-6 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold text-base">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <h3 class="text-sm font-bold text-white">Tools & Personal</h3>
+                    </div>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li class="bg-obsidian-900/80 p-2.5 rounded-xl border border-slate-800 flex items-center justify-between">
+                            <span>Microsoft Office Suite</span>
+                            <i class="fa-solid fa-check text-amber-400 text-[10px]"></i>
+                        </li>
+                        <li class="bg-obsidian-900/80 p-2.5 rounded-xl border border-slate-800 flex items-center justify-between">
+                            <span>FB Marketplace & CRM Tools</span>
+                            <i class="fa-solid fa-check text-amber-400 text-[10px]"></i>
+                        </li>
+                        <li class="bg-obsidian-900/80 p-2.5 rounded-xl border border-slate-800 flex items-center justify-between">
+                            <span>Reading, Travel, Fitness</span>
+                            <i class="fa-solid fa-heart text-amber-400 text-[10px]"></i>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="space-y-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-800/80 pb-4">
+                <div>
+                    <span class="text-amber-400 text-xs font-bold uppercase tracking-widest">Connect</span>
+                    <h2 class="text-3xl font-extrabold text-white">Get in Touch</h2>
+                </div>
+                <p class="text-slate-400 text-xs">Direct inquiries, collaborations, and professional outreach.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-8">
+
+                <!-- Left Contact Information -->
+                <div class="lg:col-span-5 space-y-4">
+                    <div class="glass-card rounded-3xl p-6 space-y-4">
+                        <h3 class="text-lg font-bold text-white">Contact Channels</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Feel free to reach out via email or phone for corporate sponsorships, leadership roles, accounting inquiries, or networking.
+                        </p>
+
+                        <div class="space-y-3 pt-2">
+                            <a href="https://www.linkedin.com/in/aryanna-feona-dela-cruz-52656537a/" target="_blank" rel="noopener noreferrer" class="p-3.5 rounded-2xl bg-obsidian-900 border border-amber-500/30 flex items-center justify-between hover:border-amber-400 transition-all group">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center text-sm group-hover:scale-110 transition-transform">
+                                        <i class="fa-brands fa-linkedin"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-[10px] text-amber-400 font-semibold uppercase tracking-wider">LinkedIn Network</div>
+                                        <div class="text-xs font-bold text-slate-200 group-hover:text-amber-300 transition-colors">aryanna-feona-dela-cruz</div>
+                                    </div>
+                                </div>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-amber-400 text-xs"></i>
+                            </a>
+
+                            <div onclick="copyToClipboard('yanna_delacruz@dlsu.edu.ph')" class="p-3.5 rounded-2xl bg-obsidian-900 border border-slate-800 flex items-center justify-between cursor-pointer hover:border-amber-500/40 transition-all">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center text-xs">
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-[10px] text-slate-400 font-medium">Primary Email</div>
+                                        <div class="text-xs font-bold text-slate-200">yanna_delacruz@dlsu.edu.ph</div>
+                                    </div>
+                                </div>
+                                <i class="fa-regular fa-copy text-slate-500 text-xs"></i>
+                            </div>
+
+                            <div onclick="copyToClipboard('aryannafeonadelacruz05@gmail.com')" class="p-3.5 rounded-2xl bg-obsidian-900 border border-slate-800 flex items-center justify-between cursor-pointer hover:border-amber-500/40 transition-all">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center text-xs">
+                                        <i class="fa-solid fa-at"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-[10px] text-slate-400 font-medium">Personal Email</div>
+                                        <div class="text-xs font-bold text-slate-200">aryannafeonadelacruz05@gmail.com</div>
+                                    </div>
+                                </div>
+                                <i class="fa-regular fa-copy text-slate-500 text-xs"></i>
+                            </div>
+
+                            <div onclick="copyToClipboard('+639150546892')" class="p-3.5 rounded-2xl bg-obsidian-900 border border-slate-800 flex items-center justify-between cursor-pointer hover:border-amber-500/40 transition-all">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center text-xs">
+                                        <i class="fa-solid fa-phone"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-[10px] text-slate-400 font-medium">Mobile Phone</div>
+                                        <div class="text-xs font-bold text-slate-200">+63 915 054 6892</div>
+                                    </div>
+                                </div>
+                                <i class="fa-regular fa-copy text-slate-500 text-xs"></i>
+                            </div>
+
+                            <div class="p-3.5 rounded-2xl bg-obsidian-900 border border-slate-800 flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center text-xs">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <div class="text-[10px] text-slate-400 font-medium">Address</div>
+                                    <div class="text-xs font-bold text-slate-200">359 Santo Cristo, Pulilan, Bulacan, 3005</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-2 text-[11px] text-slate-400 italic">
+                            * References available upon request.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Contact Form -->
+                <div class="lg:col-span-7">
+                    <form onsubmit="handleFormSubmit(event)" class="glass-card rounded-3xl p-6 sm:p-8 space-y-4">
+                        <h3 class="text-lg font-bold text-white">Send a Message</h3>
+
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div class="space-y-1.5">
+                                <label class="text-xs font-semibold text-slate-300">Your Name</label>
+                                <input type="text" required placeholder="John Doe" class="w-full bg-obsidian-900 border border-slate-800 rounded-xl px-4 py-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 transition-colors">
+                            </div>
+                            <div class="space-y-1.5">
+                                <label class="text-xs font-semibold text-slate-300">Your Email</label>
+                                <input type="email" required placeholder="john@example.com" class="w-full bg-obsidian-900 border border-slate-800 rounded-xl px-4 py-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 transition-colors">
+                            </div>
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-semibold text-slate-300">Subject</label>
+                            <input type="text" required placeholder="Sponsorship Opportunity / Internship Inquiry" class="w-full bg-obsidian-900 border border-slate-800 rounded-xl px-4 py-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 transition-colors">
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-semibold text-slate-300">Message</label>
+                            <textarea rows="4" required placeholder="Write your message here..." class="w-full bg-obsidian-900 border border-slate-800 rounded-xl px-4 py-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 transition-colors"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-3.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-obsidian-950 font-bold text-xs shadow-lg shadow-amber-500/20 transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span>Send Message</span>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- VERCEL DEPLOYMENT INSTRUCTIONS STEP-BY-STEP CARD -->
+        <section class="no-print">
+            <div class="glass-card rounded-3xl p-6 sm:p-8 border border-amber-500/30 bg-gradient-to-r from-obsidian-900 via-obsidian-900 to-amber-950/20">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-bold text-white">Deploy Live to Vercel in 2 Minutes</h3>
+                        <p class="text-xs text-slate-400">Step-by-step instructions to get your portfolio live at <code>aryanna-delacruz.vercel.app</code></p>
+                    </div>
+                </div>
+
+                <div class="grid sm:grid-cols-3 gap-4 pt-2 text-xs">
+                    <div class="bg-obsidian-950/80 p-4 rounded-2xl border border-slate-800">
+                        <div class="font-bold text-amber-400 mb-1">Step 1: Save file</div>
+                        <p class="text-slate-400 text-[11px] leading-relaxed">Save this document as <code class="text-amber-300">index.html</code> on your desktop or project folder.</p>
+                    </div>
+                    <div class="bg-obsidian-950/80 p-4 rounded-2xl border border-slate-800">
+                        <div class="font-bold text-amber-400 mb-1">Step 2: Upload to GitHub</div>
+                        <p class="text-slate-400 text-[11px] leading-relaxed">Create a GitHub repository and push this file into it.</p>
+                    </div>
+                    <div class="bg-obsidian-950/80 p-4 rounded-2xl border border-slate-800">
+                        <div class="font-bold text-amber-400 mb-1">Step 3: Connect Vercel</div>
+                        <p class="text-slate-400 text-[11px] leading-relaxed">Go to <a href="https://vercel.com" target="_blank" class="text-amber-300 underline">vercel.com</a>, click <strong>"Import Repository"</strong>, and press <strong>Deploy</strong>!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800/80 bg-obsidian-950 py-8 no-print">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+            <div class="flex items-center gap-3">
+                <span class="font-bold text-slate-300">Aryanna Feona B. Dela Cruz</span>
+                <span>• BS Accountancy • DLSU Manila</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="https://www.linkedin.com/in/aryanna-feona-dela-cruz-52656537a/" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 font-semibold flex items-center gap-1.5 transition-colors">
+                    <i class="fa-brands fa-linkedin text-sm"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <span>© 2026 All Rights Reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function copyToClipboard(text) {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(() => showToast('Copied to clipboard!'));
+            } else {
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                document.body.appendChild(textarea);
+                textarea.select();
+                try {
+                    document.execCommand('copy');
+                    showToast('Copied to clipboard!');
+                } catch (e) {
+                    showToast('Copy failed');
+                }
+                document.body.removeChild(textarea);
+            }
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-message');
+            toastMsg.innerText = msg;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            showToast('Thank you! Message sent successfully.');
+            e.target.reset();
+        }
+
+        function filterLeadership(category) {
+            const cards = document.querySelectorAll('.lead-card');
+            const btnAll = document.getElementById('btn-lead-all');
+            const btnExec = document.getElementById('btn-lead-exec');
+            const btnCorp = document.getElementById('btn-lead-corp');
+
+            // Reset buttons
+            [btnAll, btnExec, btnCorp].forEach(b => {
+                b.className = 'px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition-all';
+            });
+
+            if(category === 'all') {
+                btnAll.className = 'px-3 py-1.5 rounded-lg bg-amber-500 text-obsidian-950 font-bold transition-all';
+                cards.forEach(c => c.style.display = 'block');
+            } else if(category === 'exec') {
+                btnExec.className = 'px-3 py-1.5 rounded-lg bg-amber-500 text-obsidian-950 font-bold transition-all';
+                cards.forEach(c => {
+                    c.style.display = c.classList.contains('exec') ? 'block' : 'none';
+                });
+            } else if(category === 'corp') {
+                btnCorp.className = 'px-3 py-1.5 rounded-lg bg-amber-500 text-obsidian-950 font-bold transition-all';
+                cards.forEach(c => {
+                    c.style.display = c.classList.contains('corp') ? 'block' : 'none';
+                });
+            }
+        }
+    </script>
+</body>
+</html>
